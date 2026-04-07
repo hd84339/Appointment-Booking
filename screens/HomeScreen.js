@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, ScrollView, TextInput, SafeAreaView } from 'react-native';
-import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const mockProviders = [
   { id: 1, name: "Rahul Barber", category: "Salon", rating: 4.8, distance: "1.2 km", image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=200&q=80" },
@@ -39,7 +38,7 @@ export default function HomeScreen() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.searchContainer}>
           <Ionicons name="search" size={20} color="#999" />
-          <TextInput 
+          <TextInput
             style={styles.searchInput}
             placeholder="Search providers, services..."
             placeholderTextColor="#999"
@@ -69,8 +68,8 @@ export default function HomeScreen() {
             <TouchableOpacity><Text style={styles.seeAll}>See All</Text></TouchableOpacity>
           </View>
           {mockProviders.map((item) => (
-            <TouchableOpacity 
-              key={item.id} 
+            <TouchableOpacity
+              key={item.id}
               style={styles.providerCard}
               onPress={() => handleProviderPress(item)}
               activeOpacity={0.7}
